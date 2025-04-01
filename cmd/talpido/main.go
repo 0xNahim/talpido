@@ -10,7 +10,7 @@ import (
 func createTopo(serverIP string){
 	cmd0 := exec.Command("mkdir", "./topo")
 	cmd0.Run()
-	cmd := exec.Command("go", "build", "-ldflags", fmt.Sprintf("-X main.serverIP=%s", serverIP), "-o", "./topo/topo", "./topo.go")
+	cmd := exec.Command("go", "build", "-ldflags", fmt.Sprintf("-X main.server=%s", serverIP), "-o", "./topo/topo", "./topo.go")
 	err := cmd.Run() 
 	if err != nil {
 		fmt.Println("Error al compilar el archivo:", err)
